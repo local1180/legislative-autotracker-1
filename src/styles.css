@@ -19,3 +19,7 @@ body .mat-list-base .mat-list-item .mat-list-item-content,
 body .mat-card {
 	width: 95%;
 }
+
+.flex-spacer {
+	flex-grow: 1;
+}
