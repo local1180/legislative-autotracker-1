@@ -1,0 +1,44 @@
+<div class=""
+    *ngIf="legislator">
+    <div class="legislator">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title><h2>{{legislator.fullName | uppercase }}</h2></mat-card-title>
+                <mat-card-subtitle><h3>{{legislator.chamber}} District {{legislator.districtCode}}</h3></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                {{legislator.email}}
+                {{legislator.imgName}}
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="flex-container">
+        <div class="bills">
+            <mat-nav-list>
+                <h3 matSubheader>CoSponsored</h3>
+                <a mat-list-item routerLink="/bill-detail/{{bill.basePrintNo}}" *ngFor="let bill of (stateLegislature.bills | async | billsByChamber:legislator.chamber | isSponsor: legislator:true)">
+                    <mat-card>
+                        <mat-card-title>{{bill.basePrintNo}}{{bill.activeVersion}}</mat-card-title>
+                        <mat-card-content>{{bill.title}}</mat-card-content>
+                    </mat-card>
+                </a>
+            </mat-nav-list>
+        </div>
+        <div class="bills">
+            <mat-nav-list>
+                <h3 matSubheader>Not CoSponsored</h3>
+                <a mat-list-item routerLink="/bill-detail/{{bill.basePrintNo}}" *ngFor="let bill of (stateLegislature.bills | async | billsByChamber:legislator.chamber | isSponsor: legislator:false)">
+                    <mat-card>
+                        <mat-card-title>{{bill.basePrintNo}}{{bill.activeVersion}}</mat-card-title>
+                        <mat-card-content>{{bill.title}}</mat-card-content>
+                    </mat-card>
+                </a>
+            </mat-nav-list>
+        </div>
+    </div>
+</div>
+<div class=""
+    *ngIf="!legislator">
+    <h2>Hi, there!</h2>
+    The page loaded before the data showed up.  We're working on a fix for that, but in the mean time, go to 'Legislators' or 'Priority Legislation', then come back here and you'll see stuff!
+</div>

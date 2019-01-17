@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+	margin: 70px 0 0 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+body .mat-list-base .mat-list-item,
+	 .mat-list-base .mat-list-option {
+	padding: 2px 2px;
+	height: auto;
+}
+
+body .mat-list-base .mat-list-item .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
+	padding: 0 5px;
+}
+
+body .mat-card {
+	width: 95%;
+}

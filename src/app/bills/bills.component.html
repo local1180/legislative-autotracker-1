@@ -1,0 +1,35 @@
+<h2>New York State Priority Legislation</h2>
+<div class="flex-container">
+
+    <div class="bills">
+        <mat-nav-list>
+            <h3 matSubheader>Assembly Bills</h3>
+            <a mat-list-item routerLink="/bill-detail/{{bill.basePrintNo}}" *ngFor="let bill of (bills | async | billsByChamber:'ASSEMBLY')">
+                 <mat-card>
+                     <mat-card-title>
+                        {{bill.basePrintNo}}{{bill.activeVersion}}
+                     </mat-card-title>
+                     <mat-card-content>
+                        {{bill.title}}
+                     </mat-card-content>
+                 </mat-card>
+            </a>
+        </mat-nav-list>
+    </div>
+
+    <div class="bills">
+        <mat-nav-list>
+            <h3 matSubheader>Senate Bills</h3>
+            <a mat-list-item routerLink="/bill-detail/{{bill.basePrintNo}}" *ngFor="let bill of (bills | async | billsByChamber:'SENATE')">
+                <mat-card>
+                    <mat-card-title>
+                       {{bill.basePrintNo}}{{bill.activeVersion}}
+                    </mat-card-title>
+                    <mat-card-content>
+                       {{bill.title}}
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </mat-nav-list>
+    </div>
+</div>

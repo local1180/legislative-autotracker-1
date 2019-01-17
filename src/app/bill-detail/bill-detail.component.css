@@ -1,0 +1,7 @@
+.flex-container {
+	display: flex;
+}
+
+.coSponsors {
+	flex-basis: 50%;
+}

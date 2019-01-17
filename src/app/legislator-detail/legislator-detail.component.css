@@ -1,0 +1,7 @@
+.flex-container {
+	display: flex;
+}
+
+.bills {
+	flex-basis: 50%;
+}

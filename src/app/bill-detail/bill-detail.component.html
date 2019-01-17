@@ -1,0 +1,50 @@
+<div class=""
+    *ngIf="bill">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h2>{{bill?.billType.chamber}} Bill {{bill?.printNo}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <h3>Prime Sponsor {{bill?.sponsor.member.fullName}}</h3>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <i>{{bill?.title}}</i> <br>
+            {{bill?.status.actionDate}} {{bill?.status.statusDesc}}: <i>{{bill?.status.committeeName}}</i>
+        </mat-card-content>
+    </mat-card>
+
+
+    <div class="flex-container">
+        <div class="coSponsors">
+            <mat-nav-list>
+                <h3 matSubheader>CoSponsors</h3>
+                <a mat-list-item routerLink="/legislator-detail/{{legislator.memberId}}" *ngFor="let legislator of bill.amendments.items[bill.activeVersion].coSponsors.items">
+                    <mat-card>
+                        <mat-card-title>{{legislator.shortName}}</mat-card-title>
+                        <mat-card-subtitle>District {{legislator.districtCode}}</mat-card-subtitle>
+                    </mat-card>
+                </a>
+            </mat-nav-list>
+        </div>
+
+        <div class="coSponsors"
+        *ngIf="bill?.billType.chamber === 'ASSEMBLY'">
+            <mat-nav-list>
+                <h3 matSubheader>MultiSponsors</h3>
+                <a mat-list-item routerLink="/legislator-detail/{{legislator.memberId}}" *ngFor="let legislator of bill.amendments.items[bill.activeVersion].multiSponsors.items">
+                    <mat-card>
+                        <mat-card-title>{{legislator.shortName}}</mat-card-title>
+                        <mat-card-subtitle>District {{legislator.districtCode}}</mat-card-subtitle>
+                    </mat-card>
+                </a>
+            </mat-nav-list>
+        </div>
+    </div>
+</div>
+<div class=""
+*ngIf="!bill">
+    <h2>Hi, there!</h2>
+    The page loaded before the data showed up.  We're working on a fix for that, but in the mean time, go to 'Legislators' or 'Priority Legislation', then come back here and you'll see stuff!
+</div>
