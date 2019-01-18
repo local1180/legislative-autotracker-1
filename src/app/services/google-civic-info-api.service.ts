@@ -11,7 +11,7 @@ import { keychain } from "src/api-keys";
 })
 export class GoogleCivicInfoApiService {
 	url = 'https://www.googleapis.com/civicinfo/v2/representatives?fields=divisions&key='
-			+ keychain.googleCivicInfo +'=';
+			+ keychain.googleCivicInfo +'&address=';
 
   constructor(private http: HttpClient) { }
 
