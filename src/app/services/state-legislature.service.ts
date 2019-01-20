@@ -39,7 +39,7 @@ export class StateLegislatureService {
   }
 
   loadLegislators() {
-	  this.nysApi.getLegislators(2018).subscribe(res => {
+	  this.nysApi.getLegislators(2019).subscribe(res => {
 		  this.dataStore.legislators = res;
 		  this._legislators.next(Object.assign({}, this.dataStore).legislators);
 	  });
