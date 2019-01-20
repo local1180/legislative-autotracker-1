@@ -1,4 +1,4 @@
-export class NysLegislator {
+export interface NysLegislator {
 	// short list return
 	"memberId" : number;
 	"sessionMemberId" : number;

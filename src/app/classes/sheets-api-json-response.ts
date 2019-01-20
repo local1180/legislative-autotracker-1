@@ -1,6 +1,6 @@
 import { PriorityBill } from "./priority-bill";
 
-export class SheetsApiJSONResponse {
+export interface SheetsApiJSONResponse {
 	"encoding": string;
 	"feed": {
 		"xmlns": string;
@@ -13,7 +13,7 @@ export class SheetsApiJSONResponse {
 			"email": string;
 		}];
 		"category": {};
-		"entry": [PriorityBill];
+		"entry": PriorityBill[];
 		"link": {};
 		"openSearch$startIndex": {};
 		"openSearch$totalResults": {};

@@ -1,6 +1,6 @@
 import { NysLegislator } from "./nys-legislator";
 
-export class NysBill {
+export interface NysBill {
 	"actions": {
 		"items": [{
 			"billId": {

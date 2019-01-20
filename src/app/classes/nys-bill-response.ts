@@ -1,6 +1,6 @@
 import { NysBill } from "./nys-bill";
 
-export class NysBillResponse {
+export interface NysBillResponse {
 	message: string;
 	responseType: string;
 	success: string;

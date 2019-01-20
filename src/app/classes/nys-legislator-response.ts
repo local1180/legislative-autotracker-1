@@ -1,6 +1,6 @@
 import { NysLegislator } from "./nys-legislator";
 
-export class NysLegislatorResponse {
+export interface NysLegislatorResponse {
 	"success" : boolean;
     "message" : string;
     "responseType" : string;

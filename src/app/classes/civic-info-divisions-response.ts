@@ -1,3 +1,3 @@
-export class CivicInfoDivisionsResponse {
+export interface CivicInfoDivisionsResponse {
 	divisions: {}
 }

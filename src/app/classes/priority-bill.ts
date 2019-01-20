@@ -1,5 +1,5 @@
-export class PriorityBill {
-	"category": [{}];
+export interface PriorityBill {
+	"category": [];
 	"content": {
 		"type": string;
 		"$t": string;
@@ -9,7 +9,7 @@ export class PriorityBill {
 	"gsx$senatenum": {"$t": string;};
 	"gsx$sessionyear": {"$t": string;};
 	"id": {"$t": string;};
-	"link": [{}];
+	"link": [];
 	"title": {
 		"type": string;
 		"$t": string;
