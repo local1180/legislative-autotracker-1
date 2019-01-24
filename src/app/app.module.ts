@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 // material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,8 +34,8 @@ import { LegislatorDetailComponent } from './legislator-detail/legislator-detail
 import { IsSponsorPipe } from './pipes/is-sponsor.pipe';
 import { BillDetailComponent } from './bill-detail/bill-detail.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAddressFormComponent } from './mat-address-form/mat-address-form.component';
+import { LocalDistrictTargetsComponent } from './local-district-targets/local-district-targets.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MatAddressFormComponent } from './mat-address-form/mat-address-form.com
     ByDistrictPipe,
 	BillsByChamberPipe,
 	MatAddressFormComponent,
+	LocalDistrictTargetsComponent,
   ],
   imports: [
     BrowserModule,

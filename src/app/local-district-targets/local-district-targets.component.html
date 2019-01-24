@@ -1,0 +1,14 @@
+<div class="">
+    <ul>
+        <li *ngFor="let item of (assemblyTargets | async)">
+            Local {{item.gsx$local.$t}} - Assembly District {{item.gsx$district.$t}}
+        </li>
+    </ul>
+</div>
+<div class="">
+    <ul>
+        <li *ngFor="let item of (senateTargets | async)">
+            Local {{item.gsx$local.$t}} - Senate District {{item.gsx$district.$t}}
+        </li>
+    </ul>
+</div>
