@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NysBill } from '../classes/nys-bill';
-import { NysLegislator } from '../classes/nys-legislator';
+import { NysBill } from '../interfaces/nys-bill';
+import { NysLegislator } from '../interfaces/nys-legislator';
 
 @Pipe({
   name: 'isSponsor'

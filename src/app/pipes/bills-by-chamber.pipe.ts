@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 // class imports
-import { NysBill } from '../classes/nys-bill';
+import { NysBill } from '../interfaces/nys-bill';
 
 @Pipe({
   name: 'billsByChamber',

@@ -6,8 +6,8 @@ import { map } from 'rxjs/operators';
 import { NysLegislatureApiService } from './nys-legislature-api.service';
 
 // class imports
-import { NysLegislator } from '../classes/nys-legislator';
-import { NysBill } from '../classes/nys-bill';
+import { NysLegislator } from '../interfaces/nys-legislator';
+import { NysBill } from '../interfaces/nys-bill';
 
 @Injectable({
   providedIn: 'root'

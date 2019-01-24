@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { NysLegislator } from "../classes/nys-legislator";
+import { NysLegislator } from "../interfaces/nys-legislator";
 @Pipe({
   name: 'byChamber'
 })

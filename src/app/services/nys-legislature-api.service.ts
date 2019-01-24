@@ -7,12 +7,12 @@ import { map } from 'rxjs/operators';
 import { NysPriorityLegislationApiService } from './nys-priority-legislation-api.service';
 
 // class imports
-import { SheetsApiJSONResponse } from '../classes/sheets-api-json-response';
-import { PriorityBill } from '../classes/priority-bill';
-import { NysLegislatorResponse } from '../classes/nys-legislator-response';
-import { NysLegislator } from '../classes/nys-legislator';
-import { NysBillResponse } from '../classes/nys-bill-response';
-import { NysBill } from '../classes/nys-bill';
+import { SheetsApiJSONResponse } from '../interfaces/sheets-api-json-response';
+import { PriorityBill } from '../interfaces/priority-bill';
+import { NysLegislatorResponse } from '../interfaces/nys-legislator-response';
+import { NysLegislator } from '../interfaces/nys-legislator';
+import { NysBillResponse } from '../interfaces/nys-bill-response';
+import { NysBill } from '../interfaces/nys-bill';
 
 import { keychain } from "src/api-keys";
 

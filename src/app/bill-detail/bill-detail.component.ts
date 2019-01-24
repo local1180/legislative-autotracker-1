@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StateLegislatureService } from '../services/state-legislature.service';
 
 // class imports
-import { NysBill } from '../classes/nys-bill';
+import { NysBill } from '../interfaces/nys-bill';
 
 @Component({
   selector: 'app-bill-detail',

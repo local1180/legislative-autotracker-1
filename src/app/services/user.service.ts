@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { GoogleCivicInfoApiService } from './google-civic-info-api.service';
 
 // class imports
-import { Address } from '../classes/address';
-import { CivicInfoDivisionsResponse } from "../classes/civic-info-divisions-response";
+import { Address } from '../interfaces/address';
+import { CivicInfoDivisionsResponse } from "../interfaces/civic-info-divisions-response";
 
 @Injectable({
   providedIn: 'root'

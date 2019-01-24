@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // class imports
-import { CivicInfoDivisionsResponse } from '../classes/civic-info-divisions-response';
+import { CivicInfoDivisionsResponse } from '../interfaces/civic-info-divisions-response';
 
 import { keychain } from "src/api-keys";
 

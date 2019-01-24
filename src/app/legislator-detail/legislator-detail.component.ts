@@ -6,7 +6,7 @@ import { Location } from '@angular/common'; // route is a method on Location; ig
 import { StateLegislatureService } from '../services/state-legislature.service';
 
 // class imports
-import { NysLegislator } from '../classes/nys-legislator';
+import { NysLegislator } from '../interfaces/nys-legislator';
 
 @Component({
   selector: 'app-legislator-detail',

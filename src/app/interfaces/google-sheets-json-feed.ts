@@ -1,4 +1,4 @@
-import { PriorityBill } from '../classes/priority-bill';
+import { PriorityBill } from '../interfaces/priority-bill';
 import { LocalTargets } from './local-targets';
 
 export interface GoogleSheetsJsonFeed {

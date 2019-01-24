@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 //class imports
-import { SheetsApiJSONResponse } from '../classes/sheets-api-json-response';
+import { SheetsApiJSONResponse } from '../interfaces/sheets-api-json-response';
 
 @Injectable({
   providedIn: 'root'

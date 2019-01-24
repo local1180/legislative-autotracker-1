@@ -9,11 +9,13 @@ import { UserService } from '../services/user.service';
 })
 export class MatAddressFormComponent {
   addressForm = this.fb.group({
-    line1: ['84 Grand St', Validators.required],
-    city: ['Albany', Validators.required],
-    state: ['NY', Validators.required],
-    zip5: ['12202', Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
+    line1:	['84 Grand St', Validators.required],
+    city:	['Albany', Validators.required],
+    state:	['NY', Validators.required],
+    zip5:	['12202', Validators.compose([
+      			Validators.required,
+				Validators.minLength(5),
+				Validators.maxLength(5)])
     ]
   });
 
