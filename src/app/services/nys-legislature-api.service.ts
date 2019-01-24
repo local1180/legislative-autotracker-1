@@ -4,10 +4,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 // service imports
-import { NysPriorityLegislationApiService } from './nys-priority-legislation-api.service';
+import { SheetsService } from './sheets.service';
 
 // class imports
-import { SheetsApiJSONResponse } from '../interfaces/sheets-api-json-response';
 import { PriorityBill } from '../interfaces/priority-bill';
 import { NysLegislatorResponse } from '../interfaces/nys-legislator-response';
 import { NysLegislator } from '../interfaces/nys-legislator';
@@ -27,7 +26,7 @@ export class NysLegislatureApiService {
 
   constructor(
 	  private http: HttpClient,
-	  private priorityLegislation: NysPriorityLegislationApiService,
+	  private sheets: SheetsService,
   ) { }
 
 	getLegislators(sessionYear: number): Observable<NysLegislator[]> {
@@ -39,31 +38,19 @@ export class NysLegislatureApiService {
 	}
 
 	getBills() {
-
-	  return this.priorityLegislation.getPriorityList()
-	  .pipe(
-		  map((apiResponse: SheetsApiJSONResponse) => {
-		    apiResponse.feed.entry
-		    .forEach((priorityBill: PriorityBill) => {
-
-			  // get assembly bills
-			  this.loadAssemblyBills(priorityBill)
-			  .subscribe((apiResponse: NysBill) => {
-				  this.bills.push(apiResponse);
-			  });
-
-			  // get senate bills
-			  this.loadSenateBills(priorityBill)
-			  .subscribe((apiResponse: NysBill) => {
-				  this.bills.push(apiResponse);
-			  });
-			});
-			return (this.bills); // TODO: this is where the deep-linking issue is originating
-		  })
-	  );
+		this.sheets.loadPriorityBills();
+		return this.sheets.billList.pipe(
+			map((res: PriorityBill[]) => {
+				res.forEach((bill: PriorityBill) => {
+					this.loadAssemblyBill(bill).subscribe((res: NysBill) => this.bills.push(res));
+					this.loadSenateBill(bill).subscribe((res: NysBill) => this.bills.push(res));
+				});
+				return this.bills;
+			})
+		);
 	}
 
-	private loadAssemblyBills(priorityBill: PriorityBill): Observable<NysBill> {
+	private loadAssemblyBill(priorityBill: PriorityBill): Observable<NysBill> {
 		return this.http.get(
 			this.API_BASE_URL + "bills/"
 			+ priorityBill.gsx$sessionyear.$t + "/"
@@ -73,7 +60,7 @@ export class NysLegislatureApiService {
 			map((res: NysBillResponse) => res.result)
 		);
 	}
-	private loadSenateBills(priorityBill: PriorityBill): Observable<NysBill> {
+	private loadSenateBill(priorityBill: PriorityBill): Observable<NysBill> {
 		return this.http.get(
 			this.API_BASE_URL + "bills/"
 			+ priorityBill.gsx$sessionyear.$t + "/"

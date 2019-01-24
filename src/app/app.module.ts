@@ -26,16 +26,17 @@ import { MatInputModule,
 // app
 import { AppComponent } from './app.component';
 import { LegislatorsComponent } from './legislators/legislators.component';
-import { ByChamberPipe } from './pipes/by-chamber.pipe';
-import { ByDistrictPipe } from './pipes/by-district.pipe';
 import { BillsComponent } from './bills/bills.component';
-import { BillsByChamberPipe } from './pipes/bills-by-chamber.pipe';
 import { LegislatorDetailComponent } from './legislator-detail/legislator-detail.component';
-import { IsSponsorPipe } from './pipes/is-sponsor.pipe';
 import { BillDetailComponent } from './bill-detail/bill-detail.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatAddressFormComponent } from './mat-address-form/mat-address-form.component';
 import { LocalDistrictTargetsComponent } from './local-district-targets/local-district-targets.component';
+
+import { ByChamberPipe } from './pipes/by-chamber.pipe';
+import { ByDistrictPipe } from './pipes/by-district.pipe';
+import { BillsByChamberPipe } from './pipes/bills-by-chamber.pipe';
+import { IsSponsorPipe } from './pipes/is-sponsor.pipe';
 
 @NgModule({
   declarations: [
