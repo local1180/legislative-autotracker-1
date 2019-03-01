@@ -37,6 +37,7 @@ import { ByChamberPipe } from './pipes/by-chamber.pipe';
 import { ByDistrictPipe } from './pipes/by-district.pipe';
 import { BillsByChamberPipe } from './pipes/bills-by-chamber.pipe';
 import { IsSponsorPipe } from './pipes/is-sponsor.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { IsSponsorPipe } from './pipes/is-sponsor.pipe';
 	MatSelectModule,
 	MatToolbarModule,
 	MatExpansionModule,
+	ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
