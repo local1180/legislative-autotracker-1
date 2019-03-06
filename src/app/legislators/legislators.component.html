@@ -1,6 +1,5 @@
 <app-mat-address-form></app-mat-address-form>
 
-<h2>New York State Legislature</h2>
 
 <!-- User Legislators -->
 <div class="flex-container">
@@ -8,7 +7,7 @@
     <div class="legislators"
         *ngIf="user.sldlDivisionCode">
         <mat-nav-list>
-            <h3 matSubheader>Assembly</h3>
+            <h3 matSubheader>User's Assemblymember</h3>
             <a mat-list-item routerLink="/legislator-detail/{{legislator.memberId}}" *ngFor="let legislator of (legislators | async | byChamber:'ASSEMBLY' | byDistrict:user.sldlDivisionCode)">
                 <mat-card>
                     <mat-card-title>{{legislator.shortName}}</mat-card-title>
@@ -21,7 +20,7 @@
     <div class="legislators"
         *ngIf="user.slduDivisionCode">
         <mat-nav-list>
-            <h3 matSubheader>Senate</h3>
+            <h3 matSubheader>User's Senator</h3>
             <a mat-list-item routerLink="/legislator-detail/{{legislator.memberId}}" *ngFor="let legislator of (legislators | async | byChamber:'SENATE' | byDistrict:user.slduDivisionCode)">
                 <mat-card>
                     <mat-card-title>{{legislator.shortName}}</mat-card-title>
@@ -31,6 +30,8 @@
         </mat-nav-list>
     </div>
 </div>
+
+<h2>New York State Legislature</h2>
 
 <div class="flex-container">
 

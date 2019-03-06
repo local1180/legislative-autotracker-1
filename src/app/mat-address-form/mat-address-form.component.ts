@@ -9,10 +9,10 @@ import { UserService } from '../services/user.service';
 })
 export class MatAddressFormComponent {
   addressForm = this.fb.group({
-    line1:	['84 Grand St', Validators.required],
-    city:	['Albany', Validators.required],
+    line1:	['', Validators.required],
+    city:	['', Validators.required],
     state:	['NY', Validators.required],
-    zip5:	['12202', Validators.compose([
+    zip5:	['', Validators.compose([
       			Validators.required,
 				Validators.minLength(5),
 				Validators.maxLength(5)])
@@ -92,7 +92,7 @@ export class MatAddressFormComponent {
 
   onSubmit() {
 	  // TODO: figure out how to close the expansion panel on submit;
-	  console.warn(this.addressForm.value);
+	  // console.warn(this.addressForm.value);
 	  this.user.updateAddress(this.addressForm.value);
   }
 }
