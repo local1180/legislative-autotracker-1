@@ -1,6 +1,6 @@
 # Legislative Auto Tracker
 
-This is a "Proof of Concept" project that is being supplanted by a more modular design using FireStore as a backend.  See the new project in action at https://legislative-autotracker.firebaseapp.com/
+This is a "Proof of Concept" project that is being supplanted by a more modular design using FireStore & Firebase Cloud Functions as a backend.  See the new project in action at https://legislative-autotracker.firebaseapp.com/
 
 This project is intended to be a simple drop-in web app to assist CWA Union locals in:
 * tracking state level priority legislation;
